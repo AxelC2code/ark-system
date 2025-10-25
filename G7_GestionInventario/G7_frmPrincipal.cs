@@ -82,15 +82,21 @@ namespace G7_GestionInventario
                 G7_LimpiarCampos();
                 G7_ActualizarListaProductos();
             }
-
-            catch (G7_ProductoException ex)
+            catch (FormatException)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El precio y la cantidad deben ser valores numéricos válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error de operación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             catch (Exception)
             {
-                MessageBox.Show("Por favor ingrese datos válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error inesperado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
