@@ -76,7 +76,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(793, 27);
+            this.panel1.Size = new System.Drawing.Size(756, 27);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cabecera);
             // 
@@ -106,6 +106,7 @@
             this.G7_btnRegistrar.Size = new System.Drawing.Size(123, 23);
             this.G7_btnRegistrar.TabIndex = 8;
             this.G7_btnRegistrar.Text = "Registrar";
+            this.G7_btnRegistrar.Click += new System.EventHandler(this.G7_btnRegistrar_Click);
             // 
             // G7_txtCantidad
             // 
@@ -192,6 +193,7 @@
             this.G7_btnCalcularStock.Size = new System.Drawing.Size(128, 23);
             this.G7_btnCalcularStock.TabIndex = 0;
             this.G7_btnCalcularStock.Text = "Calcular";
+            this.G7_btnCalcularStock.Click += new System.EventHandler(this.G7_btnCalcularStock_Click);
             // 
             // G7_grpBusqueda
             // 
@@ -212,6 +214,7 @@
             this.G7_btnBuscar.Size = new System.Drawing.Size(121, 23);
             this.G7_btnBuscar.TabIndex = 2;
             this.G7_btnBuscar.Text = "Buscar";
+            this.G7_btnBuscar.Click += new System.EventHandler(this.G7_btnBuscar_Click);
             // 
             // G7_txtBuscar
             // 
@@ -236,7 +239,7 @@
             this.G7_grpOrdenamiento.Controls.Add(this.G7_btnOrdenar);
             this.G7_grpOrdenamiento.Location = new System.Drawing.Point(531, 42);
             this.G7_grpOrdenamiento.Name = "G7_grpOrdenamiento";
-            this.G7_grpOrdenamiento.Size = new System.Drawing.Size(250, 100);
+            this.G7_grpOrdenamiento.Size = new System.Drawing.Size(215, 100);
             this.G7_grpOrdenamiento.TabIndex = 6;
             this.G7_grpOrdenamiento.TabStop = false;
             this.G7_grpOrdenamiento.Text = "Ordenamiento";
@@ -263,16 +266,17 @@
             // 
             // G7_btnOrdenar
             // 
-            this.G7_btnOrdenar.Location = new System.Drawing.Point(140, 31);
+            this.G7_btnOrdenar.Location = new System.Drawing.Point(128, 31);
             this.G7_btnOrdenar.Name = "G7_btnOrdenar";
             this.G7_btnOrdenar.Size = new System.Drawing.Size(75, 41);
             this.G7_btnOrdenar.TabIndex = 0;
             this.G7_btnOrdenar.Text = "Ordenar";
+            this.G7_btnOrdenar.Click += new System.EventHandler(this.G7_btnOrdenar_Click);
             // 
             // Minimizar
             // 
             this.Minimizar.Image = global::G7_GestionInventario.Properties.Resources.icon_minimized;
-            this.Minimizar.Location = new System.Drawing.Point(700, 1);
+            this.Minimizar.Location = new System.Drawing.Point(665, 0);
             this.Minimizar.Name = "Minimizar";
             this.Minimizar.Size = new System.Drawing.Size(34, 23);
             this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -283,7 +287,7 @@
             // Cerrar
             // 
             this.Cerrar.Image = global::G7_GestionInventario.Properties.Resources.icon_close;
-            this.Cerrar.Location = new System.Drawing.Point(750, 1);
+            this.Cerrar.Location = new System.Drawing.Point(715, 0);
             this.Cerrar.Name = "Cerrar";
             this.Cerrar.Size = new System.Drawing.Size(31, 23);
             this.Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -299,7 +303,7 @@
             this.G7_dgvProductos.Location = new System.Drawing.Point(275, 166);
             this.G7_dgvProductos.Name = "G7_dgvProductos";
             this.G7_dgvProductos.ReadOnly = true;
-            this.G7_dgvProductos.Size = new System.Drawing.Size(506, 343);
+            this.G7_dgvProductos.Size = new System.Drawing.Size(471, 343);
             this.G7_dgvProductos.TabIndex = 8;
             // 
             // G7_dgvStock
@@ -322,6 +326,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.G7_btnCalcularStock_Click);
             // 
             // pictureBox2
             // 
@@ -332,6 +337,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.G7_btnRegistrar_Click);
             // 
             // G7_frmPrincipal
             // 
@@ -339,7 +345,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(793, 522);
+            this.ClientSize = new System.Drawing.Size(756, 522);
             this.Controls.Add(this.G7_dgvProductos);
             this.Controls.Add(this.G7_grpOrdenamiento);
             this.Controls.Add(this.G7_grpBusqueda);
