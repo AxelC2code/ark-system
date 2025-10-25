@@ -8,6 +8,13 @@ using System.IO;
 
 namespace G7_GestionInventario.Logica
 {
+    public class G7_ProductoException : Exception
+    {
+        public G7_ProductoException(string mensaje) : base(mensaje)
+        {
+        }
+    }
+
     internal class G7_Inventario
     {
         private List<G7_Producto> G7_Productos;
@@ -23,16 +30,16 @@ namespace G7_GestionInventario.Logica
         {
             // Validaciones
             if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(categoria))
-                throw new Exception("El nombre y la categoría son obligatorios");
+                throw new G7_ProductoException("El nombre y la categoría son obligatorios");
 
             if (precio <= 0)
-                throw new Exception("El precio debe ser mayor a 0");
+                throw new G7_ProductoException("El precio debe ser mayor a 0");
 
             if (cantidad < 0)
-                throw new Exception("La cantidad no puede ser negativa");
+                throw new G7_ProductoException("La cantidad no puede ser negativa");
 
             if (G7_Productos.Any(p => p.G7_Nombre.ToLower() == nombre.ToLower()))
-                throw new Exception("Ya existe un producto con ese nombre");
+                throw new G7_ProductoException("Ya existe un producto con ese nombre");
 
             // Crear y registrar el producto
             var producto = new G7_Producto(nombre, categoria, precio, cantidad);
@@ -88,7 +95,7 @@ namespace G7_GestionInventario.Logica
                             {
                                 G7_RegistrarProducto(nombre, categoria, precio, cantidad);
                             }
-                            catch (Exception)
+                            catch (G7_ProductoException)
                             {
                                 // Ignorar productos duplicados o inválidos
                                 continue;
@@ -99,7 +106,7 @@ namespace G7_GestionInventario.Logica
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al cargar datos desde archivo: {ex.Message}");
+                throw new G7_ProductoException($"Error al cargar datos desde archivo: {ex.Message}");
             }
         }
     }

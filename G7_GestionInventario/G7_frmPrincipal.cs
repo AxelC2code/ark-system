@@ -36,6 +36,8 @@ namespace G7_GestionInventario
             G7_ActualizarListaProductos();
         }
 
+        //Para modificar el aspecto de la cabecera se implementará las siguientes lineas de codigo y metodos (solo hasta Cerrar())
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -80,10 +82,12 @@ namespace G7_GestionInventario
                 G7_LimpiarCampos();
                 G7_ActualizarListaProductos();
             }
-            //catch (G7_ProductoException ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+
+            catch (G7_ProductoException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             catch (Exception)
             {
                 MessageBox.Show("Por favor ingrese datos válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -113,18 +117,20 @@ namespace G7_GestionInventario
             }
         }
 
+        
+
+        private void G7_ActualizarListaProductos()
+        {
+            var productos = G7_inventario.G7_ObtenerProductosOrdenados(true);
+            G7_MostrarProductos(productos);
+        }
+        //limpiar
         private void G7_LimpiarCampos()
         {
             G7_txtNombre.Clear();
             G7_txtCategoria.Clear();
             G7_txtPrecio.Clear();
             G7_txtCantidad.Clear();
-        }
-
-        private void G7_ActualizarListaProductos()
-        {
-            var productos = G7_inventario.G7_ObtenerProductosOrdenados(true);
-            G7_MostrarProductos(productos);
         }
 
         private void G7_MostrarProductos(System.Collections.Generic.List<G7_Producto> productos)

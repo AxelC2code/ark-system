@@ -94,6 +94,7 @@
             this.G7_grpRegistro.Controls.Add(this.label6);
             this.G7_grpRegistro.Controls.Add(this.label7);
             this.G7_grpRegistro.Controls.Add(this.label8);
+            this.G7_grpRegistro.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.G7_grpRegistro.Location = new System.Drawing.Point(12, 42);
             this.G7_grpRegistro.Name = "G7_grpRegistro";
             this.G7_grpRegistro.Size = new System.Drawing.Size(250, 200);
@@ -103,9 +104,10 @@
             // 
             // G7_btnRegistrar
             // 
+            this.G7_btnRegistrar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.G7_btnRegistrar.Location = new System.Drawing.Point(58, 159);
             this.G7_btnRegistrar.Name = "G7_btnRegistrar";
-            this.G7_btnRegistrar.Size = new System.Drawing.Size(123, 23);
+            this.G7_btnRegistrar.Size = new System.Drawing.Size(123, 35);
             this.G7_btnRegistrar.TabIndex = 8;
             this.G7_btnRegistrar.Text = "Registrar";
             this.G7_btnRegistrar.Click += new System.EventHandler(this.G7_btnRegistrar_Click);
@@ -114,63 +116,67 @@
             // 
             this.G7_txtCantidad.Location = new System.Drawing.Point(85, 124);
             this.G7_txtCantidad.Name = "G7_txtCantidad";
-            this.G7_txtCantidad.Size = new System.Drawing.Size(150, 20);
+            this.G7_txtCantidad.Size = new System.Drawing.Size(150, 25);
             this.G7_txtCantidad.TabIndex = 7;
             // 
             // G7_txtPrecio
             // 
             this.G7_txtPrecio.Location = new System.Drawing.Point(85, 92);
             this.G7_txtPrecio.Name = "G7_txtPrecio";
-            this.G7_txtPrecio.Size = new System.Drawing.Size(150, 20);
+            this.G7_txtPrecio.Size = new System.Drawing.Size(150, 25);
             this.G7_txtPrecio.TabIndex = 6;
             // 
             // G7_txtCategoria
             // 
             this.G7_txtCategoria.Location = new System.Drawing.Point(85, 60);
             this.G7_txtCategoria.Name = "G7_txtCategoria";
-            this.G7_txtCategoria.Size = new System.Drawing.Size(150, 20);
+            this.G7_txtCategoria.Size = new System.Drawing.Size(150, 25);
             this.G7_txtCategoria.TabIndex = 5;
             // 
             // G7_txtNombre
             // 
             this.G7_txtNombre.Location = new System.Drawing.Point(85, 28);
             this.G7_txtNombre.Name = "G7_txtNombre";
-            this.G7_txtNombre.Size = new System.Drawing.Size(150, 20);
+            this.G7_txtNombre.Size = new System.Drawing.Size(150, 25);
             this.G7_txtNombre.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 127);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(63, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "Cantidad:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 95);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.Size = new System.Drawing.Size(47, 17);
             this.label6.TabIndex = 2;
             this.label6.Text = "Precio:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(6, 63);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.Size = new System.Drawing.Size(68, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "Categoría:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(6, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.Size = new System.Drawing.Size(60, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "Nombre:";
             // 
@@ -202,9 +208,10 @@
             this.G7_grpBusqueda.Controls.Add(this.G7_btnBuscar);
             this.G7_grpBusqueda.Controls.Add(this.G7_txtBuscar);
             this.G7_grpBusqueda.Controls.Add(this.label1);
+            this.G7_grpBusqueda.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
             this.G7_grpBusqueda.Location = new System.Drawing.Point(275, 42);
             this.G7_grpBusqueda.Name = "G7_grpBusqueda";
-            this.G7_grpBusqueda.Size = new System.Drawing.Size(250, 100);
+            this.G7_grpBusqueda.Size = new System.Drawing.Size(250, 114);
             this.G7_grpBusqueda.TabIndex = 5;
             this.G7_grpBusqueda.TabStop = false;
             this.G7_grpBusqueda.Text = "Búsqueda";
@@ -213,7 +220,7 @@
             // 
             this.G7_btnBuscar.Location = new System.Drawing.Point(85, 63);
             this.G7_btnBuscar.Name = "G7_btnBuscar";
-            this.G7_btnBuscar.Size = new System.Drawing.Size(121, 23);
+            this.G7_btnBuscar.Size = new System.Drawing.Size(121, 31);
             this.G7_btnBuscar.TabIndex = 2;
             this.G7_btnBuscar.Text = "Buscar";
             this.G7_btnBuscar.Click += new System.EventHandler(this.G7_btnBuscar_Click);
@@ -222,7 +229,7 @@
             // 
             this.G7_txtBuscar.Location = new System.Drawing.Point(85, 28);
             this.G7_txtBuscar.Name = "G7_txtBuscar";
-            this.G7_txtBuscar.Size = new System.Drawing.Size(150, 20);
+            this.G7_txtBuscar.Size = new System.Drawing.Size(150, 25);
             this.G7_txtBuscar.TabIndex = 1;
             // 
             // label1
@@ -230,7 +237,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(63, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
@@ -239,9 +246,10 @@
             this.G7_grpOrdenamiento.Controls.Add(this.G7_rbDescendente);
             this.G7_grpOrdenamiento.Controls.Add(this.G7_rbAscendente);
             this.G7_grpOrdenamiento.Controls.Add(this.G7_btnOrdenar);
+            this.G7_grpOrdenamiento.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F);
             this.G7_grpOrdenamiento.Location = new System.Drawing.Point(531, 42);
             this.G7_grpOrdenamiento.Name = "G7_grpOrdenamiento";
-            this.G7_grpOrdenamiento.Size = new System.Drawing.Size(215, 100);
+            this.G7_grpOrdenamiento.Size = new System.Drawing.Size(215, 114);
             this.G7_grpOrdenamiento.TabIndex = 6;
             this.G7_grpOrdenamiento.TabStop = false;
             this.G7_grpOrdenamiento.Text = "Ordenamiento";
@@ -249,9 +257,9 @@
             // G7_rbDescendente
             // 
             this.G7_rbDescendente.AutoSize = true;
-            this.G7_rbDescendente.Location = new System.Drawing.Point(16, 59);
+            this.G7_rbDescendente.Location = new System.Drawing.Point(8, 63);
             this.G7_rbDescendente.Name = "G7_rbDescendente";
-            this.G7_rbDescendente.Size = new System.Drawing.Size(89, 17);
+            this.G7_rbDescendente.Size = new System.Drawing.Size(107, 23);
             this.G7_rbDescendente.TabIndex = 2;
             this.G7_rbDescendente.Text = "Descendente";
             // 
@@ -259,16 +267,16 @@
             // 
             this.G7_rbAscendente.AutoSize = true;
             this.G7_rbAscendente.Checked = true;
-            this.G7_rbAscendente.Location = new System.Drawing.Point(16, 27);
+            this.G7_rbAscendente.Location = new System.Drawing.Point(8, 30);
             this.G7_rbAscendente.Name = "G7_rbAscendente";
-            this.G7_rbAscendente.Size = new System.Drawing.Size(82, 17);
+            this.G7_rbAscendente.Size = new System.Drawing.Size(99, 23);
             this.G7_rbAscendente.TabIndex = 1;
             this.G7_rbAscendente.TabStop = true;
             this.G7_rbAscendente.Text = "Ascendente";
             // 
             // G7_btnOrdenar
             // 
-            this.G7_btnOrdenar.Location = new System.Drawing.Point(128, 31);
+            this.G7_btnOrdenar.Location = new System.Drawing.Point(134, 41);
             this.G7_btnOrdenar.Name = "G7_btnOrdenar";
             this.G7_btnOrdenar.Size = new System.Drawing.Size(75, 41);
             this.G7_btnOrdenar.TabIndex = 0;
@@ -305,7 +313,7 @@
             this.G7_dgvProductos.Location = new System.Drawing.Point(275, 166);
             this.G7_dgvProductos.Name = "G7_dgvProductos";
             this.G7_dgvProductos.ReadOnly = true;
-            this.G7_dgvProductos.Size = new System.Drawing.Size(471, 343);
+            this.G7_dgvProductos.Size = new System.Drawing.Size(469, 343);
             this.G7_dgvProductos.TabIndex = 8;
             // 
             // G7_dgvStock
