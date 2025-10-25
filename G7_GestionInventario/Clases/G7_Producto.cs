@@ -15,12 +15,12 @@ namespace G7_GestionInventario.Clases
         public int G7_Cantidad { get; set; }
 
         // Un constructor para facilitar la creación de nuevos productos.
-        public G7_Producto(string g7_nombre, string g7_categoria, decimal g7_precio, int g7_cantidad)
+        public G7_Producto(string nombre, string categoria, decimal precio, int cantidad)
         {
-            G7_Nombre = g7_nombre;
-            G7_Categoria = g7_categoria;
-            G7_Precio = g7_precio;
-            G7_Cantidad = g7_cantidad;
+            G7_Nombre = nombre;
+            G7_Categoria = categoria;
+            G7_Precio = precio;
+            G7_Cantidad = cantidad;
         }
     }
 }
