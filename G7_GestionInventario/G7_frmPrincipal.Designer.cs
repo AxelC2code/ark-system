@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Cerrar = new System.Windows.Forms.PictureBox();
+            this.Minimizar = new System.Windows.Forms.PictureBox();
             this.G7_grpRegistro = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.G7_btnRegistrar = new System.Windows.Forms.Button();
             this.G7_txtCantidad = new System.Windows.Forms.TextBox();
             this.G7_txtPrecio = new System.Windows.Forms.TextBox();
@@ -40,6 +44,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.G7_grpStock = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.G7_dgvStock = new System.Windows.Forms.DataGridView();
             this.G7_btnCalcularStock = new System.Windows.Forms.Button();
             this.G7_grpBusqueda = new System.Windows.Forms.GroupBox();
             this.G7_btnBuscar = new System.Windows.Forms.Button();
@@ -49,24 +55,18 @@
             this.G7_rbDescendente = new System.Windows.Forms.RadioButton();
             this.G7_rbAscendente = new System.Windows.Forms.RadioButton();
             this.G7_btnOrdenar = new System.Windows.Forms.Button();
-            this.Minimizar = new System.Windows.Forms.PictureBox();
-            this.Cerrar = new System.Windows.Forms.PictureBox();
             this.G7_dgvProductos = new System.Windows.Forms.DataGridView();
-            this.G7_dgvStock = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
             this.G7_grpRegistro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.G7_grpStock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.G7_dgvStock)).BeginInit();
             this.G7_grpBusqueda.SuspendLayout();
             this.G7_grpOrdenamiento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.G7_dgvProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.G7_dgvStock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +81,38 @@
             this.panel1.Size = new System.Drawing.Size(756, 27);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Cabecera);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Liberation Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(4, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Gestión de inventario ";
+            // 
+            // Cerrar
+            // 
+            this.Cerrar.Image = global::G7_GestionInventario.Properties.Resources.icon_close;
+            this.Cerrar.Location = new System.Drawing.Point(715, 0);
+            this.Cerrar.Name = "Cerrar";
+            this.Cerrar.Size = new System.Drawing.Size(31, 23);
+            this.Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Cerrar.TabIndex = 1;
+            this.Cerrar.TabStop = false;
+            this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
+            // 
+            // Minimizar
+            // 
+            this.Minimizar.Image = global::G7_GestionInventario.Properties.Resources.icon_minimized;
+            this.Minimizar.Location = new System.Drawing.Point(665, 0);
+            this.Minimizar.Name = "Minimizar";
+            this.Minimizar.Size = new System.Drawing.Size(34, 23);
+            this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Minimizar.TabIndex = 0;
+            this.Minimizar.TabStop = false;
+            this.Minimizar.Click += new System.EventHandler(this.Minimizar_Click);
             // 
             // G7_grpRegistro
             // 
@@ -102,12 +134,23 @@
             this.G7_grpRegistro.TabStop = false;
             this.G7_grpRegistro.Text = "Registro de Productos";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::G7_GestionInventario.Properties.Resources.icon_registrar;
+            this.pictureBox2.Location = new System.Drawing.Point(189, 159);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.G7_btnRegistrar_Click);
+            // 
             // G7_btnRegistrar
             // 
             this.G7_btnRegistrar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.G7_btnRegistrar.Location = new System.Drawing.Point(58, 159);
+            this.G7_btnRegistrar.Location = new System.Drawing.Point(9, 155);
             this.G7_btnRegistrar.Name = "G7_btnRegistrar";
-            this.G7_btnRegistrar.Size = new System.Drawing.Size(123, 35);
+            this.G7_btnRegistrar.Size = new System.Drawing.Size(171, 35);
             this.G7_btnRegistrar.TabIndex = 8;
             this.G7_btnRegistrar.Text = "Registrar";
             this.G7_btnRegistrar.Click += new System.EventHandler(this.G7_btnRegistrar_Click);
@@ -192,13 +235,35 @@
             this.G7_grpStock.TabStop = false;
             this.G7_grpStock.Text = "Stock por Categoría";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::G7_GestionInventario.Properties.Resources.icon_calcular;
+            this.pictureBox1.Location = new System.Drawing.Point(189, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.G7_btnCalcularStock_Click);
+            // 
+            // G7_dgvStock
+            // 
+            this.G7_dgvStock.AllowUserToAddRows = false;
+            this.G7_dgvStock.AllowUserToDeleteRows = false;
+            this.G7_dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.G7_dgvStock.Location = new System.Drawing.Point(4, 48);
+            this.G7_dgvStock.Name = "G7_dgvStock";
+            this.G7_dgvStock.ReadOnly = true;
+            this.G7_dgvStock.Size = new System.Drawing.Size(240, 206);
+            this.G7_dgvStock.TabIndex = 2;
+            // 
             // G7_btnCalcularStock
             // 
             this.G7_btnCalcularStock.BackgroundImage = global::G7_GestionInventario.Properties.Resources.icon_calcular;
             this.G7_btnCalcularStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.G7_btnCalcularStock.Location = new System.Drawing.Point(53, 19);
+            this.G7_btnCalcularStock.Location = new System.Drawing.Point(9, 19);
             this.G7_btnCalcularStock.Name = "G7_btnCalcularStock";
-            this.G7_btnCalcularStock.Size = new System.Drawing.Size(128, 23);
+            this.G7_btnCalcularStock.Size = new System.Drawing.Size(171, 23);
             this.G7_btnCalcularStock.TabIndex = 0;
             this.G7_btnCalcularStock.Text = "Calcular";
             this.G7_btnCalcularStock.Click += new System.EventHandler(this.G7_btnCalcularStock_Click);
@@ -220,7 +285,7 @@
             // 
             this.G7_btnBuscar.Location = new System.Drawing.Point(85, 63);
             this.G7_btnBuscar.Name = "G7_btnBuscar";
-            this.G7_btnBuscar.Size = new System.Drawing.Size(121, 31);
+            this.G7_btnBuscar.Size = new System.Drawing.Size(150, 31);
             this.G7_btnBuscar.TabIndex = 2;
             this.G7_btnBuscar.Text = "Buscar";
             this.G7_btnBuscar.Click += new System.EventHandler(this.G7_btnBuscar_Click);
@@ -276,34 +341,12 @@
             // 
             // G7_btnOrdenar
             // 
-            this.G7_btnOrdenar.Location = new System.Drawing.Point(134, 41);
+            this.G7_btnOrdenar.Location = new System.Drawing.Point(134, 31);
             this.G7_btnOrdenar.Name = "G7_btnOrdenar";
-            this.G7_btnOrdenar.Size = new System.Drawing.Size(75, 41);
+            this.G7_btnOrdenar.Size = new System.Drawing.Size(75, 51);
             this.G7_btnOrdenar.TabIndex = 0;
             this.G7_btnOrdenar.Text = "Ordenar";
             this.G7_btnOrdenar.Click += new System.EventHandler(this.G7_btnOrdenar_Click);
-            // 
-            // Minimizar
-            // 
-            this.Minimizar.Image = global::G7_GestionInventario.Properties.Resources.icon_minimized;
-            this.Minimizar.Location = new System.Drawing.Point(665, 0);
-            this.Minimizar.Name = "Minimizar";
-            this.Minimizar.Size = new System.Drawing.Size(34, 23);
-            this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Minimizar.TabIndex = 0;
-            this.Minimizar.TabStop = false;
-            this.Minimizar.Click += new System.EventHandler(this.Minimizar_Click);
-            // 
-            // Cerrar
-            // 
-            this.Cerrar.Image = global::G7_GestionInventario.Properties.Resources.icon_close;
-            this.Cerrar.Location = new System.Drawing.Point(715, 0);
-            this.Cerrar.Name = "Cerrar";
-            this.Cerrar.Size = new System.Drawing.Size(31, 23);
-            this.Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Cerrar.TabIndex = 1;
-            this.Cerrar.TabStop = false;
-            this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
             // G7_dgvProductos
             // 
@@ -313,51 +356,8 @@
             this.G7_dgvProductos.Location = new System.Drawing.Point(275, 166);
             this.G7_dgvProductos.Name = "G7_dgvProductos";
             this.G7_dgvProductos.ReadOnly = true;
-            this.G7_dgvProductos.Size = new System.Drawing.Size(469, 343);
+            this.G7_dgvProductos.Size = new System.Drawing.Size(469, 336);
             this.G7_dgvProductos.TabIndex = 8;
-            // 
-            // G7_dgvStock
-            // 
-            this.G7_dgvStock.AllowUserToAddRows = false;
-            this.G7_dgvStock.AllowUserToDeleteRows = false;
-            this.G7_dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.G7_dgvStock.Location = new System.Drawing.Point(4, 48);
-            this.G7_dgvStock.Name = "G7_dgvStock";
-            this.G7_dgvStock.ReadOnly = true;
-            this.G7_dgvStock.Size = new System.Drawing.Size(240, 206);
-            this.G7_dgvStock.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::G7_GestionInventario.Properties.Resources.icon_calcular;
-            this.pictureBox1.Location = new System.Drawing.Point(187, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.G7_btnCalcularStock_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::G7_GestionInventario.Properties.Resources.icon_registrar;
-            this.pictureBox2.Location = new System.Drawing.Point(187, 159);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 23);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.G7_btnRegistrar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Liberation Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(228, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Gestión de inventario ";
             // 
             // G7_frmPrincipal
             // 
@@ -365,7 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(756, 522);
+            this.ClientSize = new System.Drawing.Size(756, 515);
             this.Controls.Add(this.G7_dgvProductos);
             this.Controls.Add(this.G7_grpOrdenamiento);
             this.Controls.Add(this.G7_grpBusqueda);
@@ -377,19 +377,19 @@
             this.Text = "G7_frmPrincipal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).EndInit();
             this.G7_grpRegistro.ResumeLayout(false);
             this.G7_grpRegistro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.G7_grpStock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.G7_dgvStock)).EndInit();
             this.G7_grpBusqueda.ResumeLayout(false);
             this.G7_grpBusqueda.PerformLayout();
             this.G7_grpOrdenamiento.ResumeLayout(false);
             this.G7_grpOrdenamiento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.G7_dgvProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.G7_dgvStock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
