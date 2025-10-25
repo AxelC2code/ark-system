@@ -55,6 +55,7 @@
             this.G7_dgvStock = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.G7_grpRegistro.SuspendLayout();
             this.G7_grpStock.SuspendLayout();
@@ -71,6 +72,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Cerrar);
             this.panel1.Controls.Add(this.Minimizar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -339,6 +341,16 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.G7_btnRegistrar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Liberation Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(4, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Gestión de inventario ";
+            // 
             // G7_frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +368,7 @@
             this.Name = "G7_frmPrincipal";
             this.Text = "G7_frmPrincipal";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.G7_grpRegistro.ResumeLayout(false);
             this.G7_grpRegistro.PerformLayout();
             this.G7_grpStock.ResumeLayout(false);
@@ -402,5 +415,6 @@
         private System.Windows.Forms.DataGridView G7_dgvProductos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
     }
 }
