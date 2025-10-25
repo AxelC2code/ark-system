@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace G7_GestionInventario.Modelo
+namespace G7_GestionInventario.Clases
 {
     internal class G7_Producto
     {

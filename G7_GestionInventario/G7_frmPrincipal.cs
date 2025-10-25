@@ -33,5 +33,17 @@ namespace G7_GestionInventario
         {
             Mover();
         }
+
+        private void Minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized; 
+        }
+
+        private void Cerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
+
+
     }
 }

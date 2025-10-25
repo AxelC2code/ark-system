@@ -53,8 +53,8 @@
       <DependentUpon>G7_frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\G7_GestorInventario.cs" />
-    <Compile Include="Modelo\G7_Categoria.cs" />
-    <Compile Include="Modelo\G7_Producto.cs" />
+    <Compile Include="Clases\G7_Categoria.cs" />
+    <Compile Include="Clases\G7_Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="G7_frmPrincipal.resx">
@@ -68,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,10 +84,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Datos\G7_Inventario.txt" />
+    <None Include="Recursos\icon_registrar.png" />
+    <None Include="Recursos\icon_minimized.png" />
+    <None Include="Recursos\icon_close.png" />
+    <None Include="Recursos\icon_calcular.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Recursos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
