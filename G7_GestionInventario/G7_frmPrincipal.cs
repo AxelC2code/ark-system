@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using G7_GestionInventario.Logica;
 using G7_GestionInventario.Clases;
@@ -28,15 +23,10 @@ namespace G7_GestionInventario
             G7_dgvProductos.Columns.Add("Precio", "Precio");
             G7_dgvProductos.Columns.Add("Cantidad", "Cantidad");
 
-            // Configurar columnas del DataGridView de stock
-            G7_dgvStock.Columns.Add("Categoria", "Categoría");
-            G7_dgvStock.Columns.Add("StockTotal", "Stock Total");
-
+            G7_dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             G7_inventario.G7_CargarDatosEjemplo();
             G7_ActualizarListaProductos();
         }
-
-        //Para modificar el aspecto de la cabecera se implementará las siguientes lineas de codigo y metodos (solo hasta Cerrar())
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -46,7 +36,7 @@ namespace G7_GestionInventario
         private void Mover()
         {
             ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0); //pegar code para mover el formulario
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void Cabecera(object sender, MouseEventArgs e)
@@ -56,12 +46,12 @@ namespace G7_GestionInventario
 
         private void Minimizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized; 
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
+            Application.Exit();
         }
 
         private void G7_btnRegistrar_Click(object sender, EventArgs e)
@@ -102,35 +92,60 @@ namespace G7_GestionInventario
 
         private void G7_btnBuscar_Click(object sender, EventArgs e)
         {
-            var productos = G7_inventario.G7_BuscarProductos(G7_txtBuscar.Text);
-            G7_MostrarProductos(productos);
+            try
+            {
+                var productos = G7_inventario.G7_BuscarProductos(G7_txtBuscar.Text);
+                G7_MostrarProductos(productos);
+                
+                if (productos.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron productos que coincidan con la búsqueda", 
+                        "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al realizar la búsqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void G7_btnOrdenar_Click(object sender, EventArgs e)
         {
-            var productos = G7_inventario.G7_ObtenerProductosOrdenados(G7_rbAscendente.Checked);
-            G7_MostrarProductos(productos);
+            try
+            {
+                var productos = G7_inventario.G7_ObtenerProductosOrdenados(G7_rbAscendente.Checked);
+                G7_MostrarProductos(productos);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al ordenar los productos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void G7_btnCalcularStock_Click(object sender, EventArgs e)
         {
-            var stockPorCategoria = G7_inventario.G7_ObtenerStockPorCategoria();
-
-            G7_dgvStock.Rows.Clear();
-            foreach (var kvp in stockPorCategoria)
+            try
             {
-                G7_dgvStock.Rows.Add(kvp.Key, kvp.Value);
+                var stockPorCategoria = G7_inventario.G7_ObtenerStockPorCategoria();
+
+                G7_dgvStock.Rows.Clear();
+                foreach (var kvp in stockPorCategoria)
+                {
+                    G7_dgvStock.Rows.Add(kvp.Key, kvp.Value);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al calcular el stock", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
 
         private void G7_ActualizarListaProductos()
         {
             var productos = G7_inventario.G7_ObtenerProductosOrdenados(true);
             G7_MostrarProductos(productos);
         }
-        //limpiar
+
         private void G7_LimpiarCampos()
         {
             G7_txtNombre.Clear();
@@ -139,7 +154,7 @@ namespace G7_GestionInventario
             G7_txtCantidad.Clear();
         }
 
-        private void G7_MostrarProductos(System.Collections.Generic.List<G7_Producto> productos)
+        private void G7_MostrarProductos(List<G7_Producto> productos)
         {
             G7_dgvProductos.Rows.Clear();
             foreach (var producto in productos)
