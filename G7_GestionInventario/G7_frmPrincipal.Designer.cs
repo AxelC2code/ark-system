@@ -56,6 +56,8 @@
             this.G7_rbAscendente = new System.Windows.Forms.RadioButton();
             this.G7_btnOrdenar = new System.Windows.Forms.Button();
             this.G7_dgvProductos = new System.Windows.Forms.DataGridView();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StockTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
@@ -251,6 +253,9 @@
             this.G7_dgvStock.AllowUserToAddRows = false;
             this.G7_dgvStock.AllowUserToDeleteRows = false;
             this.G7_dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.G7_dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Categoria,
+            this.StockTotal});
             this.G7_dgvStock.Location = new System.Drawing.Point(4, 48);
             this.G7_dgvStock.Name = "G7_dgvStock";
             this.G7_dgvStock.ReadOnly = true;
@@ -359,6 +364,18 @@
             this.G7_dgvProductos.Size = new System.Drawing.Size(469, 336);
             this.G7_dgvProductos.TabIndex = 8;
             // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // StockTotal
+            // 
+            this.StockTotal.HeaderText = "Stock Total";
+            this.StockTotal.Name = "StockTotal";
+            this.StockTotal.ReadOnly = true;
+            // 
             // G7_frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,5 +441,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StockTotal;
     }
 }
