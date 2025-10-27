@@ -58,14 +58,14 @@ namespace G7_GestionInventario
         {
             try
             {
-                decimal precio = decimal.Parse(G7_txtPrecio.Text);
-                int cantidad = int.Parse(G7_txtCantidad.Text);
+                decimal G7_precio = decimal.Parse(G7_txtPrecio.Text);
+                int G7_cantidad = int.Parse(G7_txtCantidad.Text);
 
                 G7_inventario.G7_RegistrarProducto(
                     G7_txtNombre.Text,
                     G7_txtCategoria.Text,
-                    precio,
-                    cantidad
+                    G7_precio,
+                    G7_cantidad
                 );
 
                 MessageBox.Show("Producto registrado exitosamente");
@@ -74,7 +74,7 @@ namespace G7_GestionInventario
             }
             catch (FormatException)
             {
-                MessageBox.Show("El precio y la cantidad deben ser valores numéricos válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor ingrese valores numéricos válidos para precio y cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (ArgumentException ex)
             {
@@ -94,12 +94,12 @@ namespace G7_GestionInventario
         {
             try
             {
-                var productos = G7_inventario.G7_BuscarProductos(G7_txtBuscar.Text);
-                G7_MostrarProductos(productos);
+                var G7_productos = G7_inventario.G7_BuscarProductos(G7_txtBuscar.Text);
+                G7_MostrarProductos(G7_productos);
                 
-                if (productos.Count == 0)
+                if (G7_productos.Count == 0)
                 {
-                    MessageBox.Show("No se encontraron productos que coincidan con la búsqueda", 
+                    MessageBox.Show("No se encontro productos relacionados", 
                         "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -113,8 +113,8 @@ namespace G7_GestionInventario
         {
             try
             {
-                var productos = G7_inventario.G7_ObtenerProductosOrdenados(G7_rbAscendente.Checked);
-                G7_MostrarProductos(productos);
+                var G7_productos = G7_inventario.G7_ObtenerProductosOrdenados(G7_rbAscendente.Checked);
+                G7_MostrarProductos(G7_productos);
             }
             catch (Exception)
             {
@@ -126,10 +126,10 @@ namespace G7_GestionInventario
         {
             try
             {
-                var stockPorCategoria = G7_inventario.G7_ObtenerStockPorCategoria();
+                var G7_stockPorCategoria = G7_inventario.G7_ObtenerStockPorCategoria();
 
                 G7_dgvStock.Rows.Clear();
-                foreach (var kvp in stockPorCategoria)
+                foreach (var kvp in G7_stockPorCategoria)
                 {
                     G7_dgvStock.Rows.Add(kvp.Key, kvp.Value);
                 }
@@ -142,8 +142,8 @@ namespace G7_GestionInventario
 
         private void G7_ActualizarListaProductos()
         {
-            var productos = G7_inventario.G7_ObtenerProductosOrdenados(true);
-            G7_MostrarProductos(productos);
+            var G7_productos = G7_inventario.G7_ObtenerProductosOrdenados(true);
+            G7_MostrarProductos(G7_productos);
         }
 
         private void G7_LimpiarCampos()
@@ -154,16 +154,16 @@ namespace G7_GestionInventario
             G7_txtCantidad.Clear();
         }
 
-        private void G7_MostrarProductos(List<G7_Producto> productos)
+        private void G7_MostrarProductos(List<G7_Producto> G7_productos)
         {
             G7_dgvProductos.Rows.Clear();
-            foreach (var producto in productos)
+            foreach (var G7_producto in G7_productos)
             {
                 G7_dgvProductos.Rows.Add(
-                    producto.G7_Nombre,
-                    producto.G7_Categoria,
-                    producto.G7_Precio.ToString("C"),
-                    producto.G7_Cantidad
+                    G7_producto.G7_Nombre,
+                    G7_producto.G7_Categoria,
+                    G7_producto.G7_Precio.ToString("C"),
+                    G7_producto.G7_Cantidad
                 );
             }
         }

@@ -17,89 +17,89 @@ namespace G7_GestionInventario.Logica
         }
 
         // Método para registrar un nuevo producto
-        public void G7_RegistrarProducto(string nombre, string categoria, decimal precio, int cantidad)
+        public void G7_RegistrarProducto(string G7_nombre, string G7_categoria, decimal G7_precio, int G7_cantidad)
         {
             // Validaciones
-            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(categoria))
+            if (string.IsNullOrEmpty(G7_nombre) || string.IsNullOrEmpty(G7_categoria))
                 throw new ArgumentException("Por favor rellene los campos correctamente");
 
-            if (precio <= 0)
+            if (G7_precio <= 0)
                 throw new ArgumentOutOfRangeException("El precio debe ser mayor a 0");
 
-            if (cantidad < 0)
+            if (G7_cantidad < 0)
                 throw new ArgumentOutOfRangeException("La cantidad no puede ser negativa");
 
-            if (G7_Productos.Exists(p => p.G7_Nombre.ToLower() == nombre.ToLower()))
+            if (G7_Productos.Exists(p => p.G7_Nombre.ToLower() == G7_nombre.ToLower()))
                 throw new InvalidOperationException("Ya existe un producto con ese nombre");
 
-            var producto = new G7_Producto(nombre, categoria, precio, cantidad);
-            G7_Productos.Add(producto);
+            var G7_producto = new G7_Producto(G7_nombre, G7_categoria, G7_precio, G7_cantidad);
+            G7_Productos.Add(G7_producto);
 
-            if (!G7_Categorias.ContainsKey(categoria))
+            if (!G7_Categorias.ContainsKey(G7_categoria))
             {
-                G7_Categorias[categoria] = new G7_Categoria(categoria);
+                G7_Categorias[G7_categoria] = new G7_Categoria(G7_categoria);
             }
-            G7_Categorias[categoria].G7_AgregarProducto(producto);
+            G7_Categorias[G7_categoria].G7_AgregarProducto(G7_producto);
         }
 
         // Implementación de búsqueda lineal
-        public List<G7_Producto> G7_BuscarProductos(string nombre)
+        public List<G7_Producto> G7_BuscarProductos(string G7_nombre)
         {
-            List<G7_Producto> resultados = new List<G7_Producto>();
-            nombre = nombre.ToLower();
+            List<G7_Producto> G7_resultados = new List<G7_Producto>();
+            G7_nombre = G7_nombre.ToLower();
 
             // Búsqueda lineal/secuencial
             for (int i = 0; i < G7_Productos.Count; i++)
             {
-                if (G7_Productos[i].G7_Nombre.ToLower().Contains(nombre))
+                if (G7_Productos[i].G7_Nombre.ToLower().Contains(G7_nombre))
                 {
-                    resultados.Add(G7_Productos[i]);
+                    G7_resultados.Add(G7_Productos[i]);
                 }
             }
 
-            return resultados;
+            return G7_resultados;
         }
 
-        // Implementación de Insertion Sort para ordenar únicamente por precio
+        // Implementación de Insertion Sort xd
         
         public List<G7_Producto> G7_ObtenerProductosOrdenados(bool ascendente)
         {
-            List<G7_Producto> productosOrdenados = new List<G7_Producto>(G7_Productos);
+            List<G7_Producto> G7_productosOrdenados = new List<G7_Producto>(G7_Productos);
 
-            for (int i = 1; i < productosOrdenados.Count; i++)
+            for (int i = 1; i < G7_productosOrdenados.Count; i++)
             {
-                var actual = productosOrdenados[i];
+                var actual = G7_productosOrdenados[i];
                 int j = i - 1;
 
-                // Comparar por precio directamente
-                while (j >= 0 && CompararPrecio(productosOrdenados[j].G7_Precio, actual.G7_Precio, ascendente) > 0)
+                // Comparar por precio 
+                while (j >= 0 && CompararPrecio(G7_productosOrdenados[j].G7_Precio, actual.G7_Precio, ascendente) > 0)
                 {
-                    productosOrdenados[j + 1] = productosOrdenados[j];
+                    G7_productosOrdenados[j + 1] = G7_productosOrdenados[j];
                     j--;
                 }
 
-                productosOrdenados[j + 1] = actual;
+                G7_productosOrdenados[j + 1] = actual;
             }
 
-            return productosOrdenados;
+            return G7_productosOrdenados;
         }
 
-        // Método auxiliar que compara dos precios según orden ascendente/descendente
-        private int CompararPrecio(decimal p1, decimal p2, bool ascendente)
+        // Método auxiliar que compara doss precios según orden ascendente/descendente
+        private int CompararPrecio(decimal p1, decimal p2, bool G7_ascendente)
         {
-            int comparacion = p1.CompareTo(p2);
-            return ascendente ? comparacion : -comparacion;
+            int G7_comparacion = p1.CompareTo(p2);
+            return G7_ascendente ? G7_comparacion : -G7_comparacion;
         }
 
         // Método para calcular stock por categoría usando recursividad
         public Dictionary<string, int> G7_ObtenerStockPorCategoria()
         {
-            Dictionary<string, int> resultado = new Dictionary<string, int>();
+            Dictionary<string, int> G7_resultado = new Dictionary<string, int>();
             foreach (var categoria in G7_Categorias)
             {
-                resultado[categoria.Key] = categoria.Value.G7_CalcularStockTotal();
+                G7_resultado[categoria.Key] = categoria.Value.G7_CalcularStockTotal();
             }
-            return resultado;
+            return G7_resultado;
         }
 
         // Método para cargar datos de ejemplo
