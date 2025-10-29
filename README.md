@@ -11,7 +11,7 @@ Ark System es una aplicación de escritorio desarrollada en **C\# con Windows Fo
   * **Manejo de Excepciones**: El sistema está preparado para gestionar errores comunes de usuario (como ingresar texto en campos numéricos) y del sistema (como la lectura de archivos), garantizando su estabilidad.
   * **Interfaz Gráfica Intuitiva**: Diseñada para ser fácil de usar, con todos los módulos accesibles desde una única ventana principal.
 
-![Interfaz de Ark System](G7_GestionInventario/recursos/interfaz.png)
+![Interfaz de Ark System](https://github.com/AxelC2code/ark-system/blob/main/G7_GestionInventario/Recursos/interfaz.png)
 
 ## 🚀 Tecnologías Utilizadas
 
